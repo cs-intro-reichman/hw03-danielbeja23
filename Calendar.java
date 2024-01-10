@@ -25,27 +25,27 @@ public class Calendar {
         int debugDaysCounter = 0;
         int getYear = Integer.parseInt(args[0]); // get the year.
 
-        while (getYear < getYear + 1) {
+        while (year < getYear) {
+
             advance();
             year++;
             debugDaysCounter++;
-            if (year == getYear) {
-                for (int month = 1; month < 13; month++) {
-                    for (int dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month, year); dayOfMonth++) {
-                        if (dayOfWeek == 1) {
-                            System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
+        }
+        if (year == getYear) {
+            for (int month = 1; month < 13; month++) {
+                for (int dayOfMonth = 1; dayOfMonth <= nDaysInMonth(month, year); dayOfMonth++) {
+                    if (dayOfWeek == 1) {
+                        System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 
-                        } else {
-                            System.out.println(dayOfMonth + "/" + month + "/" + year);
-                        }
-                        dayOfWeek = dayOfWeek + 1;
-                        if (dayOfWeek == 8) {
-                            dayOfWeek = 1;
-                        }
-
+                    } else {
+                        System.out.println(dayOfMonth + "/" + month + "/" + year);
                     }
-                }
+                    dayOfWeek = dayOfWeek + 1;
+                    if (dayOfWeek == 8) {
+                        dayOfWeek = 1;
+                    }
 
+                }
             }
             //// If you want to stop the loop after n days, replace the condition of the
             //// if statement with the condition (debugDaysCounter == n)
